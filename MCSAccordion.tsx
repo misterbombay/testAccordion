@@ -1,5 +1,16 @@
 import * as React from 'react';
+import styles from './MCSAccordion.module.scss';
+import { IAccordionHeaderProps } from './IAccordionHeaderProps';
+import { IAccordionBodyProps } from './IAccordionBodyProps';
 
+interface IMCSAccordionProps {
+header: IAccordionHeaderProps;
+body: IAccordionBodyProps;
+}
+
+
+export const MCSAccordion: React.FC<IMCSAccordionProps> = ({ header, body }) => {
+const [open, setOpen] = React.useState(false);
 
 const headerStyle: React.CSSProperties = {
 backgroundColor: header.backgroundColor,
@@ -13,7 +24,6 @@ border: header.showBorder
 borderRadius: header.rounded ? '12px' : '0px'
 };
 
-
 const bodyStyle: React.CSSProperties = {
 backgroundColor: body.backgroundColor,
 color: body.textColor,
@@ -25,9 +35,7 @@ border: body.showBorder
 : 'none',
 borderRadius: body.rounded ? '12px' : '0px'
 };
-
-
-return (
+  return (
 <div className="accordion">
 <div
 className={`d-flex align-items-center justify-content-between ${styles.header}`}
@@ -37,9 +45,7 @@ onClick={() => setOpen(!open)}
 {header.iconPosition === 'left' && header.showIcon && (
 <img src={header.iconUrl} className={styles.icon} />
 )}
-
-
-<span>{header.title}</span>
+  <span>{header.title}</span>
 
 
 <span className="ms-auto">
@@ -51,9 +57,7 @@ onClick={() => setOpen(!open)}
 <img src={header.iconUrl} className={styles.icon} />
 )}
 </div>
-
-
-{open && (
+  {open && (
 <div className={styles.body} style={bodyStyle}>
 {body.contentType === 'text' && <p>{body.bodyText}</p>}
 
@@ -65,7 +69,7 @@ onClick={() => setOpen(!open)}
 </div>
 )}
 </div>
-)}
+  )}
 </div>
 );
 };
