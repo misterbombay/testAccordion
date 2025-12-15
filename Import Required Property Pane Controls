@@ -1,0 +1,6 @@
+import {
+PropertyPaneTextField,
+PropertyPaneToggle,
+PropertyPaneDropdown,
+PropertyPaneSlider
+} from '@microsoft/sp-property-pane';
