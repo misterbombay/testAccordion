@@ -1,0 +1,14 @@
+spfx-mcs-accordion
+└── src
+└── webparts
+└── mcsAccordionWebpart
+├── components
+│ ├── MCSAccordion.tsx
+│ ├── MCSAccordion.module.scss
+│ ├── IAccordionHeaderProps.ts
+│ ├── IAccordionBodyProps.ts
+│ └── AccordionTypes.ts
+├── MCSAccordionWebpart.ts
+├── IMCSAccordionWebpartProps.ts
+└── loc
+└── mystrings.d.ts
