@@ -1,0 +1,40 @@
+Add this inside onInit() or as default values in your web part class.
+
+protected onInit(): Promise<void> {
+this.properties.header = this.properties.header || {
+title: 'Accordion Title',
+showIcon: true,
+iconUrl: '',
+plusLabel: '+',
+minusLabel: '-',
+iconPosition: 'right',
+backgroundColor: '#f8f9fa',
+textColor: '#000000',
+fontFamily: 'Arial',
+fontSize: '16px',
+padding: 12,
+showBorder: true,
+borderThickness: 1,
+borderColor: '#dee2e6',
+rounded: true
+};
+
+
+this.properties.body = this.properties.body || {
+contentType: 'text',
+bodyText: 'Accordion body content',
+imageUrl: '',
+backgroundColor: '#ffffff',
+textColor: '#000000',
+fontFamily: 'Arial',
+fontSize: '14px',
+padding: 12,
+showBorder: true,
+borderThickness: 1,
+borderColor: '#dee2e6',
+rounded: false
+};
+
+
+return Promise.resolve();
+}
